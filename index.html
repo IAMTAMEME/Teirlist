@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KINGDOM SMP Tier List</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Courier New', monospace;
+    background: #0c0a09 radial-gradient(circle at top, rgba(120,80,40,0.3), transparent 60%);
+    color: #f5f5f4;
+    min-height: 100vh;
+    padding: 40px 16px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; }
+  .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 6px; color: #fbbf24; }
+  h1 {
+    margin-top: 8px; font-size: 64px; font-weight: 900;
+    text-transform: uppercase; color: #fcd34d;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.8); letter-spacing: -1px;
+  }
+  .subtitle { margin-top: 12px; font-size: 18px; color: #d6d3d1; }
+  .tierlist {
+    border: 4px solid #0c0a09; border-radius: 12px; overflow: hidden;
+    background: rgba(28,25,23,0.8); box-shadow: 6px 6px 0 0 rgba(0,0,0,0.8);
+  }
+  .row { display: grid; grid-template-columns: 110px 1fr; border-bottom: 2px solid #0c0a09; }
+  .row:last-child { border-bottom: 0; }
+  .tier-label {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 900; color: #1c1917;
+    border-right: 2px solid #0c0a09;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.3);
+  }
+  .S { background: #ef4444; }
+  .A { background: #f97316; }
+  .B { background: #facc15; }
+  .C { background: #22c55e; }
+  .D { background: #3b82f6; }
+  .F { background: #9333ea; }
+  .players {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    padding: 16px; min-height: 90px; background: rgba(41,37,36,0.6);
+  }
+  .empty { font-style: italic; color: #78716c; font-size: 14px; }
+  .player {
+    display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+    background: #292524; border: 2px solid #0c0a09; border-radius: 6px;
+    box-shadow: 3px 3px 0 0 rgba(0,0,0,0.6);
+  }
+  .player img { width: 40px; height: 40px; image-rendering: pixelated; }
+  .player span { font-weight: bold; font-size: 16px; color: #f5f5f4; letter-spacing: 1px; }
+  footer { margin-top: 32px; text-align: center; font-size: 12px; color: #78716c; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <p class="eyebrow">Minecraft PVP Server</p>
+      <h1>Kingdom SMP</h1>
+      <p class="subtitle">Official Player Tier List</p>
+    </header>
+    <div class="tierlist">
+      <div class="row"><div class="tier-label S">S</div><div class="players"><span class="empty">S TIER — empty</span></div></div>
+      <div class="row"><div class="tier-label A">A</div><div class="players"><span class="empty">A TIER — empty</span></div></div>
+      <div class="row"><div class="tier-label B">B</div><div class="players">
+        <div class="player"><img src="https://mc-heads.net/avatar/TemWasntHere/40" alt="TemWasntHere"><span>TemWasntHere</span></div>
+      </div></div>
+      <div class="row"><div class="tier-label C">C</div><div class="players">
+        <div class="player"><img src="https://mc-heads.net/avatar/TAMEME/40" alt="TAMEME"><span>TAMEME</span></div>
+      </div></div>
+      <div class="row"><div class="tier-label D">D</div><div class="players"><span class="empty">D TIER — empty</span></div></div>
+      <div class="row"><div class="tier-label F">F</div><div class="players">
+        <div class="player"><img src="https://mc-heads.net/avatar/Poplizard2/40" alt="Poplizard2"><span>Poplizard2</span></div>
+      </div></div>
+    </div>
+    <footer>⛏ Rankings based on PVP performance on Kingdom SMP</footer>
+  </div>
+</body>
+</html>
