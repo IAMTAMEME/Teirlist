@@ -9,112 +9,70 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Courier New', monospace;
-    background: #0c0a09 radial-gradient(circle at top, rgba(120,80,40,0.25), transparent 60%);
+    background: #0c0a09;
+    background-image: radial-gradient(circle at top, rgba(120,80,40,0.25), transparent 60%);
     color: #f5f5f4;
     min-height: 100vh;
     padding: 40px 16px;
   }
   .container { max-width: 1024px; margin: 0 auto; }
   header { text-align: center; margin-bottom: 40px; }
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: #fbbf24;
-  }
+  .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.4em; color: #fbbf24; }
   h1 {
-    margin-top: 8px;
-    font-size: 64px;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #fcd34d;
-    text-shadow: 3px 3px 0 rgba(0,0,0,0.8);
-    letter-spacing: -1px;
+    margin-top: 8px; font-size: 60px; font-weight: 900; text-transform: uppercase;
+    color: #fcd34d; text-shadow: 3px 3px 0 rgba(0,0,0,0.8); letter-spacing: -0.02em;
   }
   .subtitle { margin-top: 12px; font-size: 18px; color: #d6d3d1; }
-
   .ip-btn {
-    margin-top: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 16px;
-    border: 2px solid #fff;
-    background: #000;
-    color: #fff;
-    font-family: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.15s;
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 12px;
+    padding: 8px 16px; border: 2px solid #fff; background: #000; color: #fff;
+    font-family: 'Courier New', monospace; font-size: 14px; border-radius: 6px;
+    cursor: pointer; transition: all 0.2s;
   }
   .ip-btn:hover { background: #fff; color: #000; }
-  .ip-btn .label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
+  .ip-btn .label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; opacity: 0.7; }
   .ip-btn .ip { font-weight: bold; }
-  .ip-btn .status { font-size: 12px; opacity: 0.8; }
+  .ip-btn .copy { font-size: 11px; opacity: 0.8; }
 
   .tierlist {
-    overflow: hidden;
-    border-radius: 12px;
-    border: 4px solid #1c1917;
-    background: rgba(28,25,23,0.8);
-    box-shadow: 6px 6px 0 0 rgba(0,0,0,0.8);
+    overflow: hidden; border-radius: 12px; border: 4px solid #1c1917;
+    background: rgba(28,25,23,0.8); box-shadow: 6px 6px 0 0 rgba(0,0,0,0.8);
   }
-  .row {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    border-bottom: 2px solid #0c0a09;
+  .section-header {
+    background: linear-gradient(90deg, #7f1d1d, #b91c1c, #7f1d1d);
+    color: #fff; text-align: center; padding: 12px; font-size: 20px;
+    font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em;
+    border-bottom: 2px solid #0c0a09; text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
   }
-  .row:last-child { border-bottom: 0; }
+  .tier-row { display: grid; grid-template-columns: 110px 1fr; border-bottom: 2px solid #0c0a09; }
+  .tier-row:last-child { border-bottom: none; }
   .tier-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 2px solid #0c0a09;
-    font-size: 36px;
-    font-weight: 900;
-    color: #1c1917;
-    text-shadow: 2px 2px 0 rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    border-right: 2px solid #0c0a09; font-size: 36px; font-weight: 900;
+    color: #1c1917; text-shadow: 2px 2px 0 rgba(255,255,255,0.3);
   }
-  .tier-S { background: #ef4444; }
-  .tier-A { background: #f97316; }
-  .tier-B { background: #facc15; }
-  .tier-C { background: #22c55e; }
-  .tier-D { background: #3b82f6; }
-  .tier-F { background: #9333ea; }
+  .tier-players {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    padding: 16px; min-height: 90px; background: rgba(41,37,36,0.6);
+  }
+  .empty { font-style: italic; color: #78716c; font-size: 14px; }
 
-  .players {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    min-height: 90px;
-    background: rgba(41,37,36,0.6);
-  }
-  .empty { font-size: 14px; font-style: italic; color: #78716c; }
+  .bg-s { background: #ef4444; }
+  .bg-a { background: #f97316; }
+  .bg-b { background: #facc15; }
+  .bg-c { background: #22c55e; }
+  .bg-d { background: #3b82f6; }
+  .bg-f { background: #9333ea; }
+  .bg-tc { background: linear-gradient(135deg, #fbbf24, #dc2626, #7c2d12); }
+  .bg-tc span { color: #fff; text-shadow: 2px 2px 0 rgba(0,0,0,0.7); font-size: 18px; line-height: 1.1; text-align: center; }
 
   .player {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 12px;
-    border: 2px solid #fff;
-    background: #000;
-    border-radius: 6px;
+    display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+    border: 2px solid #fff; background: #000; border-radius: 6px;
     box-shadow: 3px 3px 0 0 rgba(0,0,0,0.6);
   }
-  .player img {
-    width: 40px;
-    height: 40px;
-    image-rendering: pixelated;
-  }
-  .player span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 0.5px;
-  }
+  .player img { width: 40px; height: 40px; image-rendering: pixelated; }
+  .player span { font-weight: bold; font-size: 16px; color: #fff; letter-spacing: 0.05em; }
 
   footer { margin-top: 32px; text-align: center; font-size: 12px; color: #78716c; }
 </style>
@@ -125,41 +83,53 @@
       <p class="eyebrow">Minecraft PVP Server</p>
       <h1>Kingdom SMP</h1>
       <p class="subtitle">Official Player Tier List</p>
-      <button class="ip-btn" onclick="copyIP(this)">
+      <button class="ip-btn" onclick="copyIP(this)" aria-label="Copy server IP">
         <span class="label">Server IP</span>
         <span class="ip">91.244.70.178:25521</span>
-        <span class="status">📋 Copy</span>
+        <span class="copy">📋 Copy</span>
       </button>
     </header>
 
     <div class="tierlist">
-      <div class="row">
-        <div class="tier-label tier-S">S</div>
-        <div class="players"><span class="empty">S TIER — empty</span></div>
-      </div>
-      <div class="row">
-        <div class="tier-label tier-A">A</div>
-        <div class="players"><span class="empty">A TIER — empty</span></div>
-      </div>
-      <div class="row">
-        <div class="tier-label tier-B">B</div>
-        <div class="players">
-          <div class="player"><img src="https://mc-heads.net/avatar/TemWasntHere/40" alt="TemWasntHere"><span>TemWasntHere</span></div>
+      <div class="section-header">⚔ True Calamity ⚔</div>
+      <div class="tier-row">
+        <div class="tier-label bg-tc"><span>TRUE<br>CALAMITY</span></div>
+        <div class="tier-players">
+          <div class="player"><img src="https://mc-heads.net/avatar/Timthecrafter29/40" alt="Timthecrafter29"><span>Timthecrafter29</span></div>
+          <div class="player"><img src="https://mc-heads.net/avatar/Chosen/40" alt="Chosen"><span>Chosen</span></div>
         </div>
       </div>
-      <div class="row">
-        <div class="tier-label tier-C">C</div>
-        <div class="players">
+
+      <div class="tier-row">
+        <div class="tier-label bg-s">S</div>
+        <div class="tier-players"><span class="empty">S TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label bg-a">A</div>
+        <div class="tier-players">
+          <div class="player"><img src="https://mc-heads.net/avatar/ShaqOatmeals/40" alt="ShaqOatmeals"><span>ShaqOatmeals</span></div>
+        </div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label bg-b">B</div>
+        <div class="tier-players">
+          <div class="player"><img src="https://mc-heads.net/avatar/TemWasntHere/40" alt="TemWasntHere"><span>TemWasntHere</span></div>
+          <div class="player"><img src="https://mc-heads.net/avatar/itzfuzzu/40" alt="itzfuzzu"><span>itzfuzzu</span></div>
+        </div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label bg-c">C</div>
+        <div class="tier-players">
           <div class="player"><img src="https://mc-heads.net/avatar/TAMEME/40" alt="TAMEME"><span>TAMEME</span></div>
         </div>
       </div>
-      <div class="row">
-        <div class="tier-label tier-D">D</div>
-        <div class="players"><span class="empty">D TIER — empty</span></div>
+      <div class="tier-row">
+        <div class="tier-label bg-d">D</div>
+        <div class="tier-players"><span class="empty">D TIER — empty</span></div>
       </div>
-      <div class="row">
-        <div class="tier-label tier-F">F</div>
-        <div class="players">
+      <div class="tier-row">
+        <div class="tier-label bg-f">F</div>
+        <div class="tier-players">
           <div class="player"><img src="https://mc-heads.net/avatar/Poplizard2/40" alt="Poplizard2"><span>Poplizard2</span></div>
           <div class="player"><img src="https://mc-heads.net/avatar/XFERN0_/40" alt="XFERN0_"><span>XFERN0_</span></div>
         </div>
@@ -171,11 +141,11 @@
 
 <script>
   function copyIP(btn) {
-    navigator.clipboard.writeText("91.244.70.178:25521").then(() => {
-      const status = btn.querySelector(".status");
-      const original = status.textContent;
-      status.textContent = "✓ Copied";
-      setTimeout(() => status.textContent = original, 1500);
+    navigator.clipboard.writeText('91.244.70.178:25521').then(() => {
+      const copy = btn.querySelector('.copy');
+      const original = copy.textContent;
+      copy.textContent = '✓ Copied';
+      setTimeout(() => { copy.textContent = original; }, 1500);
     });
   }
 </script>
