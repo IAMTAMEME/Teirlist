@@ -20,6 +20,8 @@
     position: relative;
     overflow-x: hidden;
   }
+
+  /* Animated gradient backdrop */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -30,6 +32,7 @@
     z-index: -2;
     animation: drift 14s ease-in-out infinite alternate;
   }
+  /* Grid floor */
   body::after {
     content: '';
     position: fixed; inset: 0;
@@ -44,7 +47,9 @@
     0% { transform: translate3d(0,0,0) scale(1); }
     100% { transform: translate3d(-20px,20px,0) scale(1.08); }
   }
+
   .wrapper { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+
   header { text-align: center; margin-bottom: 50px; }
   .eyebrow {
     font-family: 'Press Start 2P', monospace;
@@ -69,7 +74,14 @@
     from { filter: drop-shadow(3px 4px 0 rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(255,170,40,0.3)); }
     to   { filter: drop-shadow(3px 4px 0 rgba(0,0,0,0.9)) drop-shadow(0 0 40px rgba(255,170,40,0.7)); }
   }
-  .subtitle { font-size: 24px; color: #d6d3d1; margin-top: 12px; letter-spacing: 0.15em; }
+  .subtitle {
+    font-size: 24px;
+    color: #d6d3d1;
+    margin-top: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  /* IP button */
   .ip-btn {
     margin-top: 24px;
     display: inline-flex; align-items: center; gap: 14px;
@@ -83,23 +95,33 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
-    box-shadow: 4px 4px 0 #000;
+    box-shadow: 0 0 0 rgba(255,255,255,0), 4px 4px 0 #000;
   }
   .ip-btn:hover {
     background: #fff; color: #000;
     transform: translate(-2px,-2px);
     box-shadow: 0 0 24px rgba(255,255,255,0.5), 6px 6px 0 #000;
   }
-  .ip-btn .label { font-family: 'Press Start 2P', monospace; font-size: 9px; letter-spacing: 0.3em; opacity: 0.75; }
+  .ip-btn .label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    opacity: 0.75;
+  }
   .ip-btn .ip { font-weight: bold; font-size: 22px; }
   .ip-btn .copy { font-size: 14px; opacity: 0.8; }
+
+  /* Tier list container */
   .tierlist {
     border: 3px solid #000;
     border-radius: 14px;
     overflow: hidden;
     background: rgba(15,12,20,0.85);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 30px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.05),
+      0 30px 80px rgba(0,0,0,0.7),
+      inset 0 1px 0 rgba(255,255,255,0.05);
   }
   .section-title {
     font-family: 'Press Start 2P', monospace;
@@ -111,7 +133,12 @@
     color: #ffd27a;
     text-shadow: 2px 2px 0 #000;
   }
-  .tier-row { display: grid; grid-template-columns: 120px 1fr; border-bottom: 2px solid #000; min-height: 100px; }
+  .tier-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-bottom: 2px solid #000;
+    min-height: 100px;
+  }
   .tier-row:last-child { border-bottom: 0; }
   .tier-label {
     display: flex; align-items: center; justify-content: center;
@@ -135,13 +162,21 @@
   .tier-c { background: linear-gradient(135deg, #6bcf63, #2e8b3e); }
   .tier-d { background: linear-gradient(135deg, #4dabf7, #1864ab); }
   .tier-f { background: linear-gradient(135deg, #9d4edd, #5a189a); }
-  .tier-tc { background: linear-gradient(135deg, #f5f5f5, #b0b0b0); font-size: 14px; padding: 0 6px; text-align: center; line-height: 1.1; }
+  .tier-tc { background: linear-gradient(135deg, #f5f5f5, #b0b0b0); }
+  .tier-tc { font-size: 14px; padding: 0 6px; text-align: center; line-height: 1.1; }
+
   .tier-content {
     display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
     padding: 16px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), rgba(20,18,28,0.6);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
+      rgba(20,18,28,0.6);
   }
-  .empty { font-size: 18px; color: #6b6570; font-style: italic; }
+  .empty {
+    font-size: 18px; color: #6b6570; font-style: italic;
+  }
+
+  /* Player card */
   .player {
     display: inline-flex; align-items: center; gap: 10px;
     background: #000;
@@ -152,7 +187,7 @@
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.05em;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.8), 0 0 0 0 rgba(255,255,255,0);
     transition: transform 0.18s ease, box-shadow 0.25s ease, border-color 0.2s ease;
     position: relative;
     overflow: hidden;
@@ -170,8 +205,19 @@
     border-color: #ffd27a;
   }
   .player:hover::before { left: 100%; }
-  .player img { width: 38px; height: 38px; image-rendering: pixelated; border: 1px solid rgba(255,255,255,0.4); }
-  footer { margin-top: 30px; text-align: center; font-size: 18px; color: #6b6570; letter-spacing: 0.1em; }
+  .player img {
+    width: 38px; height: 38px;
+    image-rendering: pixelated;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #6b6570;
+    letter-spacing: 0.1em;
+  }
 </style>
 </head>
 <body>
@@ -191,7 +237,9 @@
       <div class="tier-row">
         <div class="tier-label tier-s">S</div>
         <div class="tier-content">
-          <div class="player"><img src="https://mc-heads.net/avatar/qlm/40" alt=""><span>qlm</span></div>
+          <div class="player"><img src="https://mc-heads.net/avatar/balanxe/40" alt=""><span>balanxe</span></div>
+          <div class="player"><img src="https://mc-heads.net/avatar/Al1/40" alt=""><span>Al1</span></div>
+          <div class="player"><img src="https://mc-heads.net/avatar/slitxy/40" alt=""><span>slitxy</span></div>
         </div>
       </div>
       <div class="tier-row">
@@ -227,12 +275,14 @@
           <div class="player"><img src="https://mc-heads.net/avatar/Zen/40" alt=""><span>Zen</span></div>
         </div>
       </div>
+
       <div class="tier-row">
         <div class="tier-label tier-f">F</div>
         <div class="tier-content">
           <div class="player"><img src="https://mc-heads.net/avatar/XFERN0_/40" alt=""><span>XFERN0_</span></div>
         </div>
       </div>
+
 
       <div class="section-title">⚔ TRUE CALAMITY ⚔</div>
       <div class="tier-row">
@@ -241,6 +291,36 @@
           <div class="player"><img src="https://mc-heads.net/avatar/Timthecrafter29/40" alt=""><span>Timthecrafter29</span></div>
           <div class="player"><img src="https://mc-heads.net/avatar/Chosen/40" alt=""><span>Chosen</span></div>
         </div>
+      </div>
+    </div>
+
+    <h1 style="margin-top:60px; font-size: clamp(22px, 4vw, 38px);">MOBILE PLAYERS</h1>
+    <div class="subtitle" style="margin-bottom: 24px;">— TIER LIST —</div>
+
+    <div class="tierlist">
+      <div class="tier-row">
+        <div class="tier-label tier-s">S</div>
+        <div class="tier-content"><span class="empty">S TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label tier-a">A</div>
+        <div class="tier-content"><span class="empty">A TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label tier-b">B</div>
+        <div class="tier-content"><span class="empty">B TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label tier-c">C</div>
+        <div class="tier-content"><span class="empty">C TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label tier-d">D</div>
+        <div class="tier-content"><span class="empty">D TIER — empty</span></div>
+      </div>
+      <div class="tier-row">
+        <div class="tier-label tier-f">F</div>
+        <div class="tier-content"><span class="empty">F TIER — empty</span></div>
       </div>
     </div>
 
